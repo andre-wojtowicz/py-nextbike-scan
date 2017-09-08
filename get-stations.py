@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # run as PYTHONIOENCODING=utf-8 python3 -i get-stations.py
 
@@ -66,9 +66,6 @@ if os.environ.get("PYTHONIOENCODING") != "utf-8":
     logger.error("Run script with system env PYTHONIOENCODING=utf-8")
     sys.exit(1)
 
-# TODO: add saving to file
-# TODO: add saving to db
-# TODO: add error handling
 # TODO: add proxy
 
 if not os.path.isdir(DATA_DIR):
