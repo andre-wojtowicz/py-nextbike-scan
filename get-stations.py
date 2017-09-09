@@ -98,7 +98,7 @@ if __name__ == "__main__":
         logger.error("Run script with system env PYTHONIOENCODING=utf-8")
         sys.exit(1)
         
-    if len(os.environ.get("TOR_CONTROL_PASSWORD")) == 0:
+    if os.environ.get("TOR_CONTROL_PASSWORD") == None:
         logger.error("Run script with system env TOR_CONTROL_PASSWORD=p@s$w0rd")
         sys.exit(1)
         
@@ -167,7 +167,9 @@ if __name__ == "__main__":
                     logger.error("Stations list no places")
                     sys.exit(1)
                 
-                for place_data in random.shuffle(city_data["places"]):
+                random.shuffle(city_data["places"])
+
+                for place_data in city_data["places"]:
                     
                     if "number" not in place_data.keys():
                         logger.warning("Stations list no number")
